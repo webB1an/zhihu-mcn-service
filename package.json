@@ -2,6 +2,9 @@
   "name": "zhihu-mcn-service",
   "version": "1.0.0",
   "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "repository": "https://github.com/webB1an/zhihu-mcn-service.git",
   "author": "webB1an <webB1anyaoyao@gmail.com>",
   "license": "MIT",
