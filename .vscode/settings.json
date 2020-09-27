@@ -1,0 +1,62 @@
+{
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.vue": "vue",
+    "*.ejs": "html",
+    "*.pug": "html",
+    "*.jsx": "html"
+  },
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".vue",
+      ".ejs",
+      ".pug",
+      ".jsx"
+    ]
+  },
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "javascriptreact",
+    "ejs",
+    "pug",
+    "html",
+    "vue-html"
+  ],
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  "window.zoomLevel": 0,
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "smooth",
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "editor.codeLens": true,
+  "editor.snippetSuggestions": "top",
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
+"git.ignoreLimitWarning": true,
+"cSpell.words": [
+    "APPSECRET",
+    "JSAPI",
+    "JWTSECRET",
+    "MIAOTEJIAAPPID",
+    "MIAOTEJIAS",
+    "Zhao",
+    "appid",
+    "crmdb",
+    "dusto",
+    "jscode",
+    "openid",
+    "orderquery",
+    "resave",
+    "spbill",
+    "unifiedorder",
+    "weapp"
+  ],
+}

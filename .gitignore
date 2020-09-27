@@ -1,0 +1,11 @@
+yarn-error.log
+package-lock.json
+node_modules
+storage/
+storage/retail/*
+!storage/retail/.gitkeep 
+# Editor directories and files
+.DS_Store
+.idea
+.idea/*
+logs/*
