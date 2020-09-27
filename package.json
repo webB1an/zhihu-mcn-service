@@ -4,5 +4,8 @@
   "main": "app.js",
   "repository": "https://github.com/webB1an/zhihu-mcn-service.git",
   "author": "webB1an <webB1anyaoyao@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
