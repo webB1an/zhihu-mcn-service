@@ -40,23 +40,5 @@
   "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
   },
-"git.ignoreLimitWarning": true,
-"cSpell.words": [
-    "APPSECRET",
-    "JSAPI",
-    "JWTSECRET",
-    "MIAOTEJIAAPPID",
-    "MIAOTEJIAS",
-    "Zhao",
-    "appid",
-    "crmdb",
-    "dusto",
-    "jscode",
-    "openid",
-    "orderquery",
-    "resave",
-    "spbill",
-    "unifiedorder",
-    "weapp"
-  ],
+  "git.ignoreLimitWarning": true
 }
