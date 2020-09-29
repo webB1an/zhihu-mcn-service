@@ -1,3 +1,9 @@
+/*
+**************************************************
+* 功能: category controller
+* 作者: webB1an
+**************************************************
+*/
 const categoryModel = require('../../models/category')
 class Category {
   // constructor() {}
@@ -5,9 +11,9 @@ class Category {
     const { name } = req.body
     const category = await categoryModel.findOne({ name })
     if (category) {
-      return category
+      res.json(category)
     } else {
-      return false
+      res.json({ name })
     }
   }
 }

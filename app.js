@@ -19,6 +19,9 @@ require('./db/mongodb')
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 
+const router = require('./version/v1')
+app.use(router)
+
 app.listen(process.env.PORT, () => {
   console.log(chalk.green(`Server is running at port: ${process.env.PORT}`))
 })
