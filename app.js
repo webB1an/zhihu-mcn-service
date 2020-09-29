@@ -1,3 +1,9 @@
+/*
+**************************************************
+* 功能: project entrance
+* 作者: webB1an
+**************************************************
+*/
 const express = require('express')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')

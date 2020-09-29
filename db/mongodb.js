@@ -1,3 +1,9 @@
+/*
+**************************************************
+* 功能: mongodb
+* 作者: webB1an
+**************************************************
+*/
 const mongoose = require('mongoose')
 const chalk = require('chalk')
 
