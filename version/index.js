@@ -1,13 +1,13 @@
 /*
 **************************************************
-* 功能: routes
+* 功能: version controller
 * 作者: webB1an
 **************************************************
 */
 const express = require('express')
 const router = express.Router()
-const category = require('./category')
+const v1 = require('./v1')
 
-router.use('/category', category)
+router.use('/v1', v1)
 
 module.exports = router

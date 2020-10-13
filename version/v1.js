@@ -6,8 +6,9 @@
 */
 const express = require('express')
 const router = express.Router()
-const routes = require('../routes')
 
-router.use('/v1', routes)
+const category = require('../routes/category')
+
+router.use('/category', category)
 
 module.exports = router

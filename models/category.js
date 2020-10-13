@@ -20,7 +20,7 @@ const categorySchema = new Schema({
   },
   description: {
     type: String,
-    default: ''
+    default: '空'
   },
   createTime: {
     type: Number,

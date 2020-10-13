@@ -19,20 +19,20 @@ const productSchema = new Schema({
     default: ''
   },
   price: {
-    type: String,
-    default: ''
+    type: Number,
+    default: 0
   },
   pros: {
     type: String,
-    default: ''
+    default: '空'
   },
   cons: {
     type: String,
-    default: ''
+    default: '空'
   },
   description: {
     type: String,
-    default: ''
+    default: '空'
   },
   createTime: {
     type: Number,
