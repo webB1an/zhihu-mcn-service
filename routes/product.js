@@ -6,9 +6,9 @@
 */
 const express = require('express')
 const router = express.Router()
-const category = require('../controller/category/category')
+const product = require('../controller/product/product')
 
-router.post('/save', category.save)
-router.post('/editor', category.editor)
+router.post('/save', product.save)
+router.post('/editor', product.editor)
 
 module.exports = router
