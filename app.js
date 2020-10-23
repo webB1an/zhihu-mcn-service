@@ -5,6 +5,7 @@
 **************************************************
 */
 const express = require('express')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 const chalk = require('chalk')
@@ -12,6 +13,8 @@ const chalk = require('chalk')
 dotenv.config({ path: './dev.env' })
 
 const app = express()
+
+app.use(cors())
 
 console.log('====================================================================')
 console.log('NODE_ENV', process.env.NODE_ENV)

@@ -50,8 +50,9 @@ class Relation {
         {
           $replaceRoot: { newRoot: { $mergeObjects: [{ $arrayElemAt: ['$product', 0] }, '$$ROOT'] }}
         },
-        { $project: { _id: 0, id: 0, __v: 0, product: 0, createTime: 0, updateTime: 0 }},
-        { $sample: { size: 10 }}
+        { $project: { _id: 0, id: 0, __v: 0, product: 0, createTime: 0, updateTime: 0, categoryId: 0, productId: 0 }},
+        { $sample: { size: 10 }},
+        { $sort: { price: 1 }}
       ]).exec()
       output({
         status: 200,

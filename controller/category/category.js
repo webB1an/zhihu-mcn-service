@@ -9,9 +9,64 @@ const output = require('../../utils/output')
 
 class Category {
   // constructor() {}
+  async list(req, res, next) {
+    try {
+      const result = await categoryModel.find({}, { _id: 0 })
+      output({
+        status: 200,
+        code: 0,
+        data: result,
+        msg: '数据获取成功！'
+      })(req, res, next)
+    } catch (error) {
+      output({
+        status: 200,
+        code: 1,
+        msg: '数据获取失败！'
+      })(req, res, next)
+    }
+  }
+  async detail(req, res, next) {
+    const { id } = req.body
+    try {
+      const result = await categoryModel.findOne({ id }, { _id: 0 })
+      output({
+        status: 200,
+        code: 0,
+        data: result,
+        msg: '数据获取成功！'
+      })(req, res, next)
+    } catch (error) {
+      output({
+        status: 200,
+        code: 1,
+        msg: '数据获取失败！'
+      })(req, res, next)
+    }
+  }
+  async search(req, res, next) {
+    let { name = '' } = req.body
+    name = name.trim()
+    const option = name ? { name: new RegExp(name) } : {}
+    try {
+      const result = await categoryModel.find(option, { _id: 0 })
+      output({
+        status: 200,
+        code: 0,
+        data: result,
+        msg: '数据获取成功！'
+      })(req, res, next)
+    } catch (error) {
+      output({
+        status: 200,
+        code: 1,
+        msg: '数据获取失败！'
+      })(req, res, next)
+    }
+  }
   async save(req, res, next) {
     const { name, description } = req.body
-    const category = await categoryModel.findOne({ name })
+    const category = await categoryModel.find({ name })
     if (category.length) {
       output({
         status: 200,
