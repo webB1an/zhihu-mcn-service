@@ -22,6 +22,10 @@ const productSchema = new Schema({
     type: Number,
     default: 0
   },
+  url: {
+    type: String,
+    default: '空'
+  },
   pros: {
     type: String,
     default: '空'

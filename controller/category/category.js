@@ -5,6 +5,7 @@
 **************************************************
 */
 const categoryModel = require('../../models/category')
+const relationModel = require('../../models/relation')
 const output = require('../../utils/output')
 
 class Category {
@@ -80,6 +81,25 @@ class Category {
         code: 0,
         msg: '创建成功！',
         data: { name, description }
+      })(req, res, next)
+    }
+  }
+
+  async delete(req, res, next) {
+    const { id } = req.body
+    try {
+      await categoryModel.deleteOne({ id })
+      await relationModel.deleteOne({ categoryId: id })
+      output({
+        status: 200,
+        code: 0,
+        msg: '删除成功！'
+      })(req, res, next)
+    } catch (error) {
+      output({
+        status: 200,
+        code: 1,
+        msg: '删除失败'
       })(req, res, next)
     }
   }

@@ -9,6 +9,7 @@ const router = express.Router()
 const relation = require('../controller/relation/relation')
 
 router.post('/save', relation.save)
+router.post('/list', relation.list)
 router.post('/random', relation.random)
 
 module.exports = router

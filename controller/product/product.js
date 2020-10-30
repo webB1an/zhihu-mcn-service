@@ -5,6 +5,7 @@
 **************************************************
 */
 const productModel = require('../../models/product')
+const relationModel = require('../../models/relation')
 const output = require('../../utils/output')
 
 class Product {
@@ -65,8 +66,8 @@ class Product {
     }
   }
   async save(req, res, next) {
-    const { name, price = 0, pros = '空', cons = '空', description = '空' } = req.body
-    if (!name) {
+    const { name, price = 0, url, pros = '空', cons = '空', description = '空' } = req.body
+    if (!name || !url) {
       return output({
         status: 200,
         code: 1,
@@ -83,7 +84,7 @@ class Product {
         })(req, res, next)
       } else {
         await productModel.insertMany([
-          { name, price, pros, cons, description }
+          { name, price, url, pros, cons, description }
         ])
         output({
           status: 200,
@@ -100,9 +101,28 @@ class Product {
     }
   }
 
+  async delete(req, res, next) {
+    const { id } = req.body
+    try {
+      await productModel.deleteOne({ id })
+      await relationModel.deleteOne({ productId: id })
+      output({
+        status: 200,
+        code: 0,
+        msg: '删除成功！'
+      })(req, res, next)
+    } catch (error) {
+      output({
+        status: 200,
+        code: 1,
+        msg: '删除失败'
+      })(req, res, next)
+    }
+  }
+
   async editor(req, res, next) {
-    const { id, name, price, pros, cons, description } = req.body
-    if (!name || !id) {
+    const { id, name, price, url, pros, cons, description } = req.body
+    if (!name || !id || !url) {
       return output({
         status: 200,
         code: 1,
@@ -110,7 +130,7 @@ class Product {
       })(req, res, next)
     }
     try {
-      const update = { name, price, pros, cons, description }
+      const update = { name, price, url, pros, cons, description }
       await productModel.updateOne({ id }, { $set: update })
       output({
         status: 200,

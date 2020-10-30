@@ -12,6 +12,7 @@ router.post('/search', category.search)
 router.post('/list', category.list)
 router.post('/detail', category.detail)
 router.post('/save', category.save)
+router.post('/delete', category.delete)
 router.post('/editor', category.editor)
 
 module.exports = router
