@@ -1,0 +1,21 @@
+# 使用 docker-compose up -d
+# 启动时需要将dev.env 中的 localhost 改成 mongodb
+version: "3"
+services:
+  app:
+    container_name: zhihu-service
+    restart: on-failure
+    build: ./
+    ports:
+      - "3981:3981"
+    # volumes:
+    #   - .:/app
+    depends_on:
+      - mongodb
+  mongodb:
+    container_name: zhihu-mongo
+    image: mongo:4.0.8
+    volumes: 
+      - ~/mongo/db:/data/db
+    ports:
+      - "27017:27017"
